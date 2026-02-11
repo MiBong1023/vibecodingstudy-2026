@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle-button');
     const body = document.body;
 
+    const contactForm = document.querySelector('.contact-form form');
+    const formStatusMessage = document.getElementById('form-status-message');
+
     generateButton.addEventListener('click', generateLottoNumbers);
     themeToggleButton.addEventListener('click', toggleTheme);
 
@@ -17,6 +20,47 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('light-mode');
         themeToggleButton.textContent = '다크 모드';
     }
+
+    // Form submission handler
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const url = form.action;
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatusMessage.textContent = '문의가 성공적으로 제출되었습니다!';
+                formStatusMessage.style.color = 'green';
+                form.reset(); // Clear form fields
+            } else {
+                const data = await response.json();
+                if (data.errors) {
+                    formStatusMessage.textContent = data.errors.map(error => error.message).join(', ');
+                } else {
+                    formStatusMessage.textContent = '문의 제출에 실패했습니다. 다시 시도해주세요.';
+                }
+                formStatusMessage.style.color = 'red';
+            }
+        } catch (error) {
+            formStatusMessage.textContent = '네트워크 오류가 발생했습니다. 다시 시도해주세요.';
+            formStatusMessage.style.color = 'red';
+            console.error('Form submission error:', error);
+        }
+        // Clear message after a few seconds
+        setTimeout(() => {
+            formStatusMessage.textContent = '';
+        }, 5000);
+    });
 
 
     function generateLottoNumbers() {

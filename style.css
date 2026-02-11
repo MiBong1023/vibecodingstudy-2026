@@ -114,6 +114,14 @@ h1 {
     outline: none;
 }
 
+#form-status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 /* Dark mode styles */
 body.dark-mode {
@@ -177,4 +185,8 @@ body.dark-mode .contact-form button[type="submit"] {
 
 body.dark-mode .contact-form button[type="submit"]:hover {
     background-color: #528cbb;
+}
+
+body.dark-mode #form-status-message {
+    color: #f0f0f0; /* Default text color for messages in dark mode */
 }
