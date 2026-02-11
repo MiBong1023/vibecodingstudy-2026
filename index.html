@@ -7,49 +7,30 @@
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <main id="page-content">
-    <h1>이번 주 로또 번호 추천</h1>
-    <div id="lotto-numbers"></div>
-    <div class="button-group">
-      <button id="generate-button">번호 생성</button>
-      <button id="theme-toggle-button">다크 모드</button>
-    </div>
+  <h1>이번 주 로또 번호 추천</h1>
+  <div id="lotto-numbers"></div>
+  <div class="button-group">
+    <button id="generate-button">번호 생성</button>
+    <button id="theme-toggle-button">다크 모드</button>
+  </div>
 
-    <section class="contact-form">
-      <h2>제휴 문의</h2>
-      <form action="https://formspree.io/f/mlgwglyj" method="POST">
-        <label for="name">이름:</label>
-        <input type="text" id="name" name="name" required>
+  <section class="contact-form">
+    <h2>제휴 문의</h2>
+    <form action="https://formspree.io/f/mlgwglyj" method="POST">
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required>
 
-        <label for="email">이메일:</label>
-        <input type="email" id="email" name="_replyto" required>
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="_replyto" required>
 
-        <label for="message">문의 내용:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="message">문의 내용:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">문의 제출</button>
-      </form>
-      <div id="form-status-message"></div>
-    </section>
-  </main>
+      <button type="submit">문의 제출</button>
+    </form>
+    <div id="form-status-message"></div>
+  </section>
 
   <script defer type="text/javascript" src="/main.js"></script>
-  <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    var disqus_config = function () {
-    this.page.url = window.location.href;  // Use current page URL
-    this.page.identifier = window.location.href; // Use current page URL as identifier
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://vibecodingstudy-2026.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>
