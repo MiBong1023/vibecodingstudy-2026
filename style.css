@@ -44,7 +44,13 @@ h1 {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#generate-button, #theme-toggle-button {
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#generate-button, #theme-toggle-button, .contact-form button[type="submit"] {
     padding: 15px 30px;
     font-size: 1.2em;
     color: #ffffff;
@@ -56,9 +62,58 @@ h1 {
     margin: 5px; /* Added margin for spacing between buttons */
 }
 
-#generate-button:hover, #theme-toggle-button:hover {
+#generate-button:hover, #theme-toggle-button:hover, .contact-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+.contact-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 
 /* Dark mode styles */
 body.dark-mode {
@@ -81,10 +136,45 @@ body.dark-mode .lotto-number {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-body.dark-mode #generate-button, body.dark-mode #theme-toggle-button {
+body.dark-mode .button-group button {
     background-color: #61afef;
 }
 
-body.dark-mode #generate-button:hover, body.dark-mode #theme-toggle-button:hover {
+body.dark-mode .button-group button:hover {
+    background-color: #528cbb;
+}
+
+body.dark-mode .contact-form {
+    background-color: #3a3f4b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-form h2 {
+    color: #92bce6;
+}
+
+body.dark-mode .contact-form label {
+    color: #f0f0f0;
+}
+
+body.dark-mode .contact-form input[type="text"],
+body.dark-mode .contact-form input[type="email"],
+body.dark-mode .contact-form textarea {
+    background-color: #4a4f5d;
+    border-color: #555;
+    color: #f0f0f0;
+}
+
+body.dark-mode .contact-form input[type="text"]:focus,
+body.dark-mode .contact-form input[type="email"]:focus,
+body.dark-mode .contact-form textarea:focus {
+    border-color: #61afef;
+}
+
+body.dark-mode .contact-form button[type="submit"] {
+    background-color: #61afef;
+}
+
+body.dark-mode .contact-form button[type="submit"]:hover {
     background-color: #528cbb;
 }
